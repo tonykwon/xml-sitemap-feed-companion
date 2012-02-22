@@ -1,0 +1,25 @@
+=== XML Sitemap Feed Companion ===
+Tags: xml, sitemap, feed, canonical url
+Requires at least: 3.0
+Tested up to: 3.1
+License: GPLv3
+
+This plugin is a companion tool for <a href="http://4visions.nl/en/wordpress-plugins/xml-sitemap-feed/">XML Sitemap Feed</a> by RavanH.
+
+== Description ==
+
+This plugin basically disables WordPress Canonical Redirect Filter on a virtual URL. I created this companion tool because XML Sitemap Feed Plugin DOES NOT create a physical file unlike other sitemap plugins. If SEO friendly permalink is enabled with a trailing slash, all requests to /sitemap.xml get redirected to /sitemap.xml/ as per below nginx configuration:
+
+location / {
+  index   index.php;
+  try_files $uri $uri/ /index.php?q=$uri&$args;
+}
+
+== Installation ==
+
+Upload the XML Sitemap Feed Companion plugin to your blog, Activate it.
+
+== Changelog ==
+
+= 0.1 -
+* initial release
