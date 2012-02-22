@@ -24,7 +24,14 @@ function disable_canonical_redirects_on_virtual_url( $query )
 			exit;
 			break;
 
+		case '/robots.txt/':
+			/* redirect to sitemap.xml */
+			wp_redirect( '/robots.txt', 301 );
+			exit;
+			break;
+
 		case '/sitemap.xml':
+		case '/robots.txt':
 			/* remove the Canonical Redirect filter */
 			remove_filter( 'template_redirect', 'redirect_canonical' ); 
 			break;
